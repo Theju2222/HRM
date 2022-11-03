@@ -1,4 +1,4 @@
-import { Box, CircularProgress } from '@mui/material';
+import { Box, Checkbox, CircularProgress } from '@mui/material';
 import Paper from '@mui/material/Paper';
 import Table from '@mui/material/Table';
 import TableBody from '@mui/material/TableBody';
@@ -45,7 +45,7 @@ export default function LeadsTable(props) {
                                 <StyledTableCell align="center">Branch</StyledTableCell>
                                 <StyledTableCell align="center">Year of Graduation</StyledTableCell>
                                 <StyledTableCell align="center">Sources</StyledTableCell>
-                                <StyledTableCell align="center"> Status </StyledTableCell>
+                                <StyledTableCell align="center"> <Checkbox defaultChecked color='default'/> </StyledTableCell>
                                 <StyledTableCell align="center">Created At</StyledTableCell>
                                 <StyledTableCell align="center">Created By</StyledTableCell>
                             </TableRow>
