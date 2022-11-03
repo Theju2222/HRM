@@ -42,7 +42,7 @@ const AddUpdate = () => {
         year_of_graduation: '',
         sources: '',
         status: '',
-        calling_recruiter: '',
+        calling_recruiter: {key:'', value:''},
         date_of_calling: '',
         years_agreement: '',
         night_shift: '',
@@ -54,7 +54,7 @@ const AddUpdate = () => {
         communication_interview_date: '',
         vocab_score: '',
         vocab_interview_result: '',
-        communication_calling_recruiter: { key: '', value: '' },
+        communication_calling_recruiter: {key:'', value:''},
         communication_interview_status: '',
         communication_date_of_calling: '',
         vocab_interview_date: '',
@@ -157,7 +157,6 @@ const AddUpdate = () => {
                 ...lead,
                 communication_calling_recruiter: lead.communication_calling_recruiter.key,
                 calling_recruiter: lead.calling_recruiter.key
-
             })
                 .then(() => history.goBack())
                 .catch(err => {

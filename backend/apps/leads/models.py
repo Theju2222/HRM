@@ -166,7 +166,7 @@ class Lead(models.Model):
         User, null=True, blank=True, on_delete=models.SET_NULL, related_name="application_updated_by"
     )
     created_by = models.ForeignKey(
-        User, null=True, on_delete=models.SET_NULL, related_name="application_created_by"
+        User, null=True, blank=True, on_delete=models.SET_NULL, related_name="application_created_by"
     )
 
     def __str__(self):

@@ -50,7 +50,7 @@ class UserList(CustomLoginRequiredMixin, generics.ListAPIView):
     filterset_class = AdminsFilter
     
     def get(self, request, *args, **kwargs):
-        self.queryset = User.objects.all().order_by('-id')
+        self.queryset = User.objects.all().filter(status='active').order_by('-id')
         
         if request.login_user.role in ['member']:
             self.queryset = User.objects.exclude(status='deleted').order_by(

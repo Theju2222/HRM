@@ -19,8 +19,8 @@ class LeadFilter(filters.FilterSet):
     phone = filters.CharFilter(lookup_expr="icontains")
     degree = filters.CharFilter(lookup_expr="icontains")
     branch = filters.CharFilter(lookup_expr="icontains")
-    min = filters.CharFilter(field_name="vocab_score", lookup_expr="icontains")
-    max = filters.CharFilter(field_name="vocab_score",lookup_expr="icontains")
+    min = filters.CharFilter(field_name="vocab_score", lookup_expr="gte")
+    max = filters.CharFilter(field_name="vocab_score",lookup_expr="lte")
     year_of_graduation = filters.CharFilter(lookup_expr="icontains")
     date_of_calling = filters.DateFilter()
     vocab_interview_date = filters.DateFilter(lookup_expr="gte")
@@ -105,7 +105,7 @@ class LeadFilter(filters.FilterSet):
         return qs.all()
 
 
-class LeadList( CustomLoginRequiredMixin, generics.ListAPIView):
+class LeadList(  generics.ListAPIView):
     queryset = Lead.objects.all().order_by('-id')
     serializer_class = LeadListSerializer
     filter_backends = [DjangoFilterBackend, search.SearchFilter]
@@ -121,12 +121,6 @@ class LeadFind(CustomLoginRequiredMixin, generics.RetrieveAPIView):
 class LeadAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
     queryset = Lead.objects.all()
     serializer_class = LeadSerializer
-
-    def post(self, request, *args, **kwargs):
-        request.data['created_by'] = request.login_user.id
-        return self.create(request, *args, **kwargs)
-
-
 
 class LeadUpdate(CustomLoginRequiredMixin, generics.RetrieveAPIView, generics.UpdateAPIView):
     queryset = Lead.objects.all()

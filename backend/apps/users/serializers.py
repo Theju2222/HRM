@@ -32,7 +32,10 @@ class UserUpdateSerializer(serializers.ModelSerializer):
 
         return super(UserUpdateSerializer, self).update(instance, validated_data)
 
-    
+class UserOptionSerializer(serializers.ModelSerializer):
+    class Meta:
+        model = User
+        fields = ('id','user_name')
 
 class AddUserSerializer(serializers.ModelSerializer):
     password = serializers.CharField(write_only=True)
@@ -53,7 +56,7 @@ class AddUserSerializer(serializers.ModelSerializer):
         validated_data['token'] = token_hex(30)
         validated_data['token_expires_at'] = datetime.datetime.now(
         ) + datetime.timedelta(days=7)
-
+        validated_data['created_by']=self.context('request').login_user
         return super().create(validated_data)
 
 
@@ -90,10 +93,7 @@ class UserSignInSerializer(serializers.ModelSerializer):
                 {"error": "The password or email is incorrect."})
 
 
-class UserOptionSerializer(serializers.ModelSerializer):
-    class Meta:
-        model = User
-        fields = ('id','user_name')
+
 
 class UserInfoSerializer(serializers.ModelSerializer):
     

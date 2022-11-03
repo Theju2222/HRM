@@ -37,7 +37,7 @@ const AddUpdate = () => {
         year_of_graduation: '',
         sources: '',
         status: '',
-        calling_recruiter: { key: '', value: '' },
+        calling_recruiter: {key:'', value:''},
         date_of_calling: '',
         years_agreement: '',
         night_shift: '',
@@ -137,7 +137,7 @@ const AddUpdate = () => {
         } else {
             LeadRequest.store({
                 ...lead,
-                calling_recruiter: lead.calling_recruiter.key
+                calling_recruiter: lead.calling_recruiter
             })
                 .then(() => history.goBack())
                 .catch(err => {
