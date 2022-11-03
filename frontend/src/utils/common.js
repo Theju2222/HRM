@@ -13,7 +13,9 @@ export const getDateTimeFormat = (date, isDateTime = true) => {
     const year = new Intl.DateTimeFormat('en', { year: 'numeric' }).format(stringDate);
     const month = new Intl.DateTimeFormat('en', { month: '2-digit' }).format(stringDate);
     const day = new Intl.DateTimeFormat('en', { day: '2-digit' }).format(stringDate);
-    const time = new Intl.DateTimeFormat('en', { hour: '2-digit', minute: '2-digit' }).format(stringDate);
+    // const time = new Intl.DateTimeFormat('en', { hour: '2-digit', minute: '2-digit' }).format(stringDate);
+    const time = new Date(date).toLocaleTimeString('en',
+                 { timeStyle: 'short', hour12: false, timeZone: 'UTC' });
     return date ? `${year}/${month}/${day} ${time}` : null;
 };
 

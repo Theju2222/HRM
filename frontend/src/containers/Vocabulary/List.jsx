@@ -7,7 +7,7 @@ import { FormContext } from '../../contexts/FormContext';
 import { useQuery } from '../../hooks/useQuery';
 import LeadRequest from '../../requests/lead-request';
 import { vocabResultOption } from '../../constants';
-import { getDateFormat } from '../../utils/common';
+import { getDateFormat, getDateTimeFormat } from '../../utils/common';
 import vocabularyRequest from '../../requests/vocabulary-request';
 
 const List = () => {
@@ -83,10 +83,12 @@ const List = () => {
     
     const onChangeDateTime = (value, name) => {
         let curDate = new Date(value);
+        
         setQueries(prev => ({
             ...prev,
-            [name]: getDateFormat(curDate)
+            [name]: curDate
         }));
+        console.log("datetime", curDate)
     };
     const onChangeSearchSelect = (value, name) => {
         setQuerySelect({

@@ -21,7 +21,7 @@ class LeadFilter(filters.FilterSet):
     branch = filters.CharFilter(lookup_expr="icontains")
     year_of_graduation = filters.CharFilter(lookup_expr="icontains")
     date_of_calling = filters.DateFilter()
-    vocab_interview_date = filters.DateTimeFilter(lookup_expr="gte")
+    vocab_interview_date = filters.DateTimeFilter(lookup_expr="date__time")
     communication_date_of_calling = filters.DateFilter()
     communication_interview_date = filters.DateFilter(lookup_expr="gte")
     hr_date_of_calling = filters.DateFilter()

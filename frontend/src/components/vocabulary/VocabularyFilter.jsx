@@ -57,22 +57,37 @@ const VocabularyFilter = () => {
     const onChangeViDate = (value) => {
         setViDate(value)
     }
-
-    useEffect(()=>{
+    
+    const convertTime = timeStr => {
+        const [time, modifier] = timeStr.split(' ');
+        let [hours, minutes] = time.split(':');
+        if (hours === '12') {
+           hours = '00';
+        }
+        if (modifier === 'PM') {
+           hours = parseInt(hours, 10) + 12;
+        }
+        return `${hours}:${minutes}`;
+     };
+    
+    
+     useEffect(()=>{
 
         let datepart = new Date(viDate)
         datepart = datepart.toISOString().split("T")[0]
         let timepart = new Date(viTime)
-        // let offset = timepart.getTimezoneOffset()
-        // let milsec= timepart.getTime()
-        // timepart = new Date(milsec - (offset*60*1000))
-        timepart = timepart.toISOString().split("T")[1]
+        let curDate = new Date(timepart);
+        const offset = timepart.getTimezoneOffset()
+        curDate = new Date(curDate.getTime() - (offset*60*1000))
+        timepart = curDate.toISOString().split('T')[1]
+        // timepart = timepart.toISOString().split("T")[1]
+        // timepart = convertTime(timepart)
         let viDateTime = datepart + "T" + timepart
-        // viDateTime = viDateTime.split(".")[0]+"+5:30"
-        console.log(viDateTime.split(".")[0]+"+5:30");
+        console.log("timecheck", viDateTime);
         onChangeDateTime(viDateTime, "vocab_interview_date")
     },[viDate,viTime])
 
+    
    
     return (
         <Paper component="form" sx={{ p: 4, width: '100%' }}>
