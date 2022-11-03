@@ -81,13 +81,7 @@ const Sidebar = ({ toggleDrawer, open }) => {
                 </ListItem>
                 :null }
                 
-                <ListItem sx={activeClass('/candidates')} button onClick={() => dropdown()}>
-                    <ListItemIcon>
-                        <ArticleIcon />
-                    </ListItemIcon>
-                    <ListItemText primary="Candidates" />
-                </ListItem>
-                
+              
                 <List>
                 <ListItem sx={activeClass('/vocabulary')} button onClick={() => history.push('/vocabulary')}>
                     <ListItemIcon>
