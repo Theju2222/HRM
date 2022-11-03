@@ -1,0 +1,1086 @@
+[
+  {
+    "model": "auth.permission",
+    "pk": 1,
+    "fields": {
+      "name": "Can add log entry",
+      "content_type": 1,
+      "codename": "add_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 2,
+    "fields": {
+      "name": "Can change log entry",
+      "content_type": 1,
+      "codename": "change_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 3,
+    "fields": {
+      "name": "Can delete log entry",
+      "content_type": 1,
+      "codename": "delete_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 4,
+    "fields": {
+      "name": "Can view log entry",
+      "content_type": 1,
+      "codename": "view_logentry"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 5,
+    "fields": {
+      "name": "Can add permission",
+      "content_type": 2,
+      "codename": "add_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 6,
+    "fields": {
+      "name": "Can change permission",
+      "content_type": 2,
+      "codename": "change_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 7,
+    "fields": {
+      "name": "Can delete permission",
+      "content_type": 2,
+      "codename": "delete_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 8,
+    "fields": {
+      "name": "Can view permission",
+      "content_type": 2,
+      "codename": "view_permission"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 9,
+    "fields": {
+      "name": "Can add group",
+      "content_type": 3,
+      "codename": "add_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 10,
+    "fields": {
+      "name": "Can change group",
+      "content_type": 3,
+      "codename": "change_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 11,
+    "fields": {
+      "name": "Can delete group",
+      "content_type": 3,
+      "codename": "delete_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 12,
+    "fields": {
+      "name": "Can view group",
+      "content_type": 3,
+      "codename": "view_group"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 13,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 4,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 14,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 4,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 15,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 4,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 16,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 4,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 17,
+    "fields": {
+      "name": "Can add content type",
+      "content_type": 5,
+      "codename": "add_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 18,
+    "fields": {
+      "name": "Can change content type",
+      "content_type": 5,
+      "codename": "change_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 19,
+    "fields": {
+      "name": "Can delete content type",
+      "content_type": 5,
+      "codename": "delete_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 20,
+    "fields": {
+      "name": "Can view content type",
+      "content_type": 5,
+      "codename": "view_contenttype"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 21,
+    "fields": {
+      "name": "Can add session",
+      "content_type": 6,
+      "codename": "add_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 22,
+    "fields": {
+      "name": "Can change session",
+      "content_type": 6,
+      "codename": "change_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 23,
+    "fields": {
+      "name": "Can delete session",
+      "content_type": 6,
+      "codename": "delete_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 24,
+    "fields": {
+      "name": "Can view session",
+      "content_type": 6,
+      "codename": "view_session"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 25,
+    "fields": {
+      "name": "Can add user",
+      "content_type": 7,
+      "codename": "add_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 26,
+    "fields": {
+      "name": "Can change user",
+      "content_type": 7,
+      "codename": "change_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 27,
+    "fields": {
+      "name": "Can delete user",
+      "content_type": 7,
+      "codename": "delete_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 28,
+    "fields": {
+      "name": "Can view user",
+      "content_type": 7,
+      "codename": "view_user"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 29,
+    "fields": {
+      "name": "Can add lead",
+      "content_type": 8,
+      "codename": "add_lead"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 30,
+    "fields": {
+      "name": "Can change lead",
+      "content_type": 8,
+      "codename": "change_lead"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 31,
+    "fields": {
+      "name": "Can delete lead",
+      "content_type": 8,
+      "codename": "delete_lead"
+    }
+  },
+  {
+    "model": "auth.permission",
+    "pk": 32,
+    "fields": {
+      "name": "Can view lead",
+      "content_type": 8,
+      "codename": "view_lead"
+    }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 1,
+    "fields": { "app_label": "admin", "model": "logentry" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 2,
+    "fields": { "app_label": "auth", "model": "permission" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 3,
+    "fields": { "app_label": "auth", "model": "group" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 4,
+    "fields": { "app_label": "auth", "model": "user" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 5,
+    "fields": { "app_label": "contenttypes", "model": "contenttype" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 6,
+    "fields": { "app_label": "sessions", "model": "session" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 7,
+    "fields": { "app_label": "users", "model": "user" }
+  },
+  {
+    "model": "contenttypes.contenttype",
+    "pk": 8,
+    "fields": { "app_label": "leads", "model": "lead" }
+  },
+  {
+    "model": "users.user",
+    "pk": 1,
+    "fields": {
+      "employee_id": 10,
+      "status": "active",
+      "user_name": "Thejas",
+      "password": "pbkdf2_sha256$320000$WbkPjbYBLIZJb5iSZVUEKw$MyE/F27UI4ZPntoxeDwrYq1wnJaZKzjn6+JNZ9y3kRI=",
+      "email": "thejasbm@techis.io",
+      "token": "30c9f197f77db63e90864f5ae696902980e1627357226a8b5f6ba16c8ece",
+      "token_expires_at": "2022-11-03T04:25:43.905Z",
+      "role": "director",
+      "created_at": "2022-10-16T14:10:53.718Z",
+      "updated_at": "2022-10-27T04:25:43.905Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 2,
+    "fields": {
+      "employee_id": 10,
+      "status": "active",
+      "user_name": "Dhanush",
+      "password": "pbkdf2_sha256$320000$NgsQYEllwz5Zpfb4pWSwUR$j9LlrxJDV85PVO3fIw2fjcQWeKL+iPgbA7fQjGR6UjQ=",
+      "email": "dhanush@techis.io",
+      "token": "e9596378eb9760a23b230a5bdbab3ffa28bbbb837bcaab55b300193bbcdb",
+      "token_expires_at": "2022-11-02T07:20:45.698Z",
+      "role": "hr_level_1",
+      "created_at": "2022-10-16T14:11:16.066Z",
+      "updated_at": "2022-10-26T07:20:45.698Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 3,
+    "fields": {
+      "employee_id": 10,
+      "status": "active",
+      "user_name": "Shiva",
+      "password": "pbkdf2_sha256$320000$Ppnh7QcU2skixKMUNMFejo$ji33npyuY7S4iQtUrvyRoPcjQ0It/yQFl5EP1g6yo3Y=",
+      "email": "shiva@techis.io",
+      "token": "0324d8f6625ca7ad669433173472681c8fc09886b61882efbb9a7fcd649c",
+      "token_expires_at": "2022-10-23T14:11:35.540Z",
+      "role": "hr_level_2",
+      "created_at": "2022-10-16T14:11:35.540Z",
+      "updated_at": "2022-10-16T14:11:35.541Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 4,
+    "fields": {
+      "employee_id": 10,
+      "status": "active",
+      "user_name": "Aishwarya",
+      "password": "pbkdf2_sha256$320000$etvBmlS23IXQs6G8F1bOlo$vNLzZzHKX3RSOd1HDLN7Jn3kU5FeWWaH5HcUK+KS3bI=",
+      "email": "aishwarya@techis.io",
+      "token": "f3d7effb5844550d17556dc3ef91000de0ed4278b38df7b272d4b9478a96",
+      "token_expires_at": "2022-10-23T14:11:55.419Z",
+      "role": "director",
+      "created_at": "2022-10-16T14:11:55.420Z",
+      "updated_at": "2022-10-16T14:11:55.420Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 5,
+    "fields": {
+      "employee_id": 103,
+      "status": "active",
+      "user_name": "suvo",
+      "password": "pbkdf2_sha256$260000$UzjvfK2gcTssqGKgdIDVdJ$SHqWKePggJbjURjaSRoEjCZQaVcVKzTf5EaEinSrDDs=",
+      "email": "suvo@techis.io",
+      "token": "20f10cfd2141f9d37d6edf94d2baaa825eecc7ad55aafb9e82bc68a05ed0",
+      "token_expires_at": "2022-11-01T13:48:26.308Z",
+      "role": "director",
+      "created_at": "2022-10-25T13:48:13.887Z",
+      "updated_at": "2022-10-25T13:48:26.308Z"
+    }
+  },
+  {
+    "model": "users.user",
+    "pk": 6,
+    "fields": {
+      "employee_id": 1,
+      "status": "active",
+      "user_name": "Kavya",
+      "password": "pbkdf2_sha256$320000$R5RKiuEnHMuNFFitSnApg6$Vfma4aUUbnwIgg/h3Yew4FLBipLsvm5/fXshvvqdGEQ=",
+      "email": "kavya@techis.io",
+      "token": "f5d173a29474ea62cbc5e07f119e227b586aaafe49ff655ff2e5e97b8ca1",
+      "token_expires_at": "2022-11-02T08:58:58.646Z",
+      "role": "hr_level_2",
+      "created_at": "2022-10-26T08:55:20.412Z",
+      "updated_at": "2022-10-26T08:58:58.647Z"
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 1,
+    "fields": {
+      "name": "Ranjan",
+      "email": "ranjan@gmail.com",
+      "date_of_birth": "2022-05-17T18:30:00Z",
+      "phone": 19787269178,
+      "current_state": "himachal_pradesh",
+      "current_city": "bangalore",
+      "native_state": "jharkhand",
+      "native_city": "gvbhjncgvhbjgvh",
+      "college": "v bnm",
+      "degree": "nm,",
+      "branch": "gvhbjn",
+      "year_of_graduation": 4567,
+      "sources": "fghj",
+      "status": "rejected",
+      "calling_recruiter": 1,
+      "date_of_calling": "2022-10-19T18:30:00Z",
+      "years_agreement": "yes",
+      "night_shift": "yes",
+      "liquidated_damage": "yes",
+      "wfo": "yes",
+      "tutoring": "no",
+      "relocate": "yes",
+      "vocab_interview_status": "no_pick_up_1st",
+      "vocab_interview_date": "2022-10-20T09:51:12Z",
+      "vocab_score": "345",
+      "vocab_interview_result": "qualified",
+      "vocab_review": null,
+      "communication_calling_recruiter": 2,
+      "communication_date_of_calling": "2022-10-19T18:30:00Z",
+      "communication_interview_status": "no_pick_up_1st",
+      "communication_interview_date": "2022-10-20T09:30:40Z",
+      "communication_grade": "a_good",
+      "communication_result": "qualified",
+      "communication_review": null,
+      "hr_calling_recruiter": 1,
+      "hr_date_of_calling": "2022-02-01T18:30:00Z",
+      "hr_interview_status": "no_pick_up_2nd",
+      "hr_interview_date": "2022-10-20T09:30:00Z",
+      "hr_result": "shortlisted",
+      "hr_review": null,
+      "offered_status": "offer_letter_sent",
+      "follow_by": 2,
+      "offered_date_of_joining": "2022-10-10T18:30:00Z",
+      "revised_date_of_joining": null,
+      "joined_status": "joined",
+      "offered_review": null,
+      "updated_at": "2022-10-26T06:54:28.717Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 2,
+    "fields": {
+      "name": "Sharad",
+      "email": "s@gmail.com",
+      "date_of_birth": "2022-10-10T18:30:00Z",
+      "phone": 1978726917823,
+      "current_state": "himachal_pradesh",
+      "current_city": "sdfg",
+      "native_state": "karnataka",
+      "native_city": "dfg",
+      "college": "dff",
+      "degree": "hjk",
+      "branch": "vghrhy",
+      "year_of_graduation": 234,
+      "sources": "fghj",
+      "status": "shortlisted",
+      "calling_recruiter": 3,
+      "date_of_calling": "2022-10-19T18:30:00Z",
+      "years_agreement": "yes",
+      "night_shift": "yes",
+      "liquidated_damage": "yes",
+      "wfo": "yes",
+      "tutoring": "yes",
+      "relocate": "yes",
+      "vocab_interview_status": "no_pick_up_1st",
+      "vocab_interview_date": "2022-10-20T10:30:20Z",
+      "vocab_score": "1234",
+      "vocab_interview_result": "qualified",
+      "vocab_review": "rt",
+      "communication_calling_recruiter": 4,
+      "communication_date_of_calling": "2022-10-24T18:30:00Z",
+      "communication_interview_status": "call_later",
+      "communication_interview_date": "2022-10-25T15:39:42Z",
+      "communication_grade": "b1_average",
+      "communication_result": "qualified",
+      "communication_review": null,
+      "hr_calling_recruiter": 4,
+      "hr_date_of_calling": "2022-10-24T18:30:00Z",
+      "hr_interview_status": "interview_booked",
+      "hr_interview_date": "2022-10-26T15:40:21Z",
+      "hr_result": "shortlisted",
+      "hr_review": null,
+      "offered_status": "offer_letter_sent",
+      "follow_by": 4,
+      "offered_date_of_joining": "2022-10-25T18:30:00Z",
+      "revised_date_of_joining": "2022-10-30T18:30:00Z",
+      "joined_status": "yet_to_join",
+      "offered_review": null,
+      "updated_at": "2022-10-25T15:40:56.666Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 3,
+    "fields": {
+      "name": "Night Cohort",
+      "email": "sample.director@techis.io",
+      "date_of_birth": "2022-09-21T18:30:00Z",
+      "phone": 5129476986,
+      "current_state": "himachal_pradesh",
+      "current_city": "bangalore",
+      "native_state": "kerala",
+      "native_city": "Saharsa",
+      "college": "v bnm",
+      "degree": "hjk",
+      "branch": "Be",
+      "year_of_graduation": 4567,
+      "sources": "fghj",
+      "status": "rejected",
+      "calling_recruiter": null,
+      "date_of_calling": null,
+      "years_agreement": null,
+      "night_shift": null,
+      "liquidated_damage": null,
+      "wfo": null,
+      "tutoring": null,
+      "relocate": null,
+      "vocab_interview_status": null,
+      "vocab_interview_date": null,
+      "vocab_score": null,
+      "vocab_interview_result": null,
+      "vocab_review": null,
+      "communication_calling_recruiter": null,
+      "communication_date_of_calling": null,
+      "communication_interview_status": null,
+      "communication_interview_date": null,
+      "communication_grade": null,
+      "communication_result": null,
+      "communication_review": null,
+      "hr_calling_recruiter": null,
+      "hr_date_of_calling": null,
+      "hr_interview_status": null,
+      "hr_interview_date": null,
+      "hr_result": null,
+      "hr_review": null,
+      "offered_status": null,
+      "follow_by": null,
+      "offered_date_of_joining": null,
+      "revised_date_of_joining": null,
+      "joined_status": null,
+      "offered_review": null,
+      "updated_at": "2022-10-25T05:55:58.036Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 4,
+    "fields": {
+      "name": "Student Session",
+      "email": "sample.diredctor@techis.io",
+      "date_of_birth": "2022-06-27T18:30:00Z",
+      "phone": 1234567890,
+      "current_state": "karnataka",
+      "current_city": "werth",
+      "native_state": "kerala",
+      "native_city": "Saharsa",
+      "college": "v bnm",
+      "degree": "nm,",
+      "branch": "be",
+      "year_of_graduation": 4567,
+      "sources": "fb",
+      "status": "shortlisted",
+      "calling_recruiter": 1,
+      "date_of_calling": null,
+      "years_agreement": null,
+      "night_shift": null,
+      "liquidated_damage": null,
+      "wfo": null,
+      "tutoring": null,
+      "relocate": null,
+      "vocab_interview_status": null,
+      "vocab_interview_date": null,
+      "vocab_score": null,
+      "vocab_interview_result": "qualified",
+      "vocab_review": null,
+      "communication_calling_recruiter": null,
+      "communication_date_of_calling": null,
+      "communication_interview_status": null,
+      "communication_interview_date": null,
+      "communication_grade": null,
+      "communication_result": null,
+      "communication_review": null,
+      "hr_calling_recruiter": null,
+      "hr_date_of_calling": null,
+      "hr_interview_status": null,
+      "hr_interview_date": null,
+      "hr_result": null,
+      "hr_review": null,
+      "offered_status": null,
+      "follow_by": null,
+      "offered_date_of_joining": null,
+      "revised_date_of_joining": null,
+      "joined_status": null,
+      "offered_review": null,
+      "updated_at": "2022-10-26T06:54:48.320Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 5,
+    "fields": {
+      "name": "Rakhesh",
+      "email": "rakhesh@gmail.com",
+      "date_of_birth": "1994-10-04T05:03:13Z",
+      "phone": 123456789,
+      "current_state": "karnataka",
+      "current_city": "Bangalore",
+      "native_state": "karnataka",
+      "native_city": "Bangalore",
+      "college": "BSBS",
+      "degree": "BTech",
+      "branch": "Computer Science",
+      "year_of_graduation": 2019,
+      "sources": "LinkedIn",
+      "status": "shortlisted",
+      "calling_recruiter": 4,
+      "date_of_calling": "2022-10-24T18:30:00Z",
+      "years_agreement": "yes",
+      "night_shift": "yes",
+      "liquidated_damage": "yes",
+      "wfo": "yes",
+      "tutoring": "yes",
+      "relocate": "yes",
+      "vocab_interview_status": "interview_booked",
+      "vocab_interview_date": "2022-10-24T19:05:46Z",
+      "vocab_score": "76543",
+      "vocab_interview_result": "qualified",
+      "vocab_review": null,
+      "communication_calling_recruiter": 3,
+      "communication_date_of_calling": "2022-05-02T18:30:00Z",
+      "communication_interview_status": "interview_booked",
+      "communication_interview_date": "2022-10-25T05:07:20Z",
+      "communication_grade": "a_good",
+      "communication_result": "qualified",
+      "communication_review": null,
+      "hr_calling_recruiter": 4,
+      "hr_date_of_calling": "2022-10-18T18:30:00Z",
+      "hr_interview_status": "interview_booked",
+      "hr_interview_date": "2022-10-25T06:30:33Z",
+      "hr_result": "shortlisted",
+      "hr_review": null,
+      "offered_status": "offer_letter_sent",
+      "follow_by": 3,
+      "offered_date_of_joining": "2022-05-18T18:30:00Z",
+      "revised_date_of_joining": "2022-10-30T18:30:00Z",
+      "joined_status": "joined",
+      "offered_review": null,
+      "updated_at": "2022-10-26T06:52:58.922Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 6,
+    "fields": {
+      "name": "Tunisha",
+      "email": "t@gmail.com",
+      "date_of_birth": "2022-10-16T18:30:00Z",
+      "phone": 1978726917834,
+      "current_state": "himachal_pradesh",
+      "current_city": "sdf",
+      "native_state": "karnataka",
+      "native_city": "xcvb",
+      "college": "KVG",
+      "degree": "hjk",
+      "branch": "Be",
+      "year_of_graduation": 4567,
+      "sources": "gyhjk",
+      "status": "rejected",
+      "calling_recruiter": null,
+      "date_of_calling": null,
+      "years_agreement": null,
+      "night_shift": null,
+      "liquidated_damage": null,
+      "wfo": null,
+      "tutoring": null,
+      "relocate": null,
+      "vocab_interview_status": null,
+      "vocab_interview_date": null,
+      "vocab_score": null,
+      "vocab_interview_result": null,
+      "vocab_review": null,
+      "communication_calling_recruiter": null,
+      "communication_date_of_calling": null,
+      "communication_interview_status": null,
+      "communication_interview_date": null,
+      "communication_grade": null,
+      "communication_result": null,
+      "communication_review": null,
+      "hr_calling_recruiter": null,
+      "hr_date_of_calling": null,
+      "hr_interview_status": null,
+      "hr_interview_date": null,
+      "hr_result": null,
+      "hr_review": null,
+      "offered_status": null,
+      "follow_by": null,
+      "offered_date_of_joining": null,
+      "revised_date_of_joining": null,
+      "joined_status": null,
+      "offered_review": null,
+      "updated_at": "2022-10-25T05:55:58.036Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 7,
+    "fields": {
+      "name": "gagan",
+      "email": "ga@gmail.com",
+      "date_of_birth": "2022-10-10T18:30:00Z",
+      "phone": 234,
+      "current_state": "himachal_pradesh",
+      "current_city": "bangalore",
+      "native_state": "karnataka",
+      "native_city": "gvbhjn",
+      "college": "v bnm",
+      "degree": "nm,",
+      "branch": "be",
+      "year_of_graduation": 234,
+      "sources": "fb",
+      "status": "rejected",
+      "calling_recruiter": null,
+      "date_of_calling": null,
+      "years_agreement": null,
+      "night_shift": null,
+      "liquidated_damage": null,
+      "wfo": null,
+      "tutoring": null,
+      "relocate": null,
+      "vocab_interview_status": null,
+      "vocab_interview_date": null,
+      "vocab_score": null,
+      "vocab_interview_result": null,
+      "vocab_review": null,
+      "communication_calling_recruiter": null,
+      "communication_date_of_calling": null,
+      "communication_interview_status": null,
+      "communication_interview_date": null,
+      "communication_grade": null,
+      "communication_result": null,
+      "communication_review": null,
+      "hr_calling_recruiter": null,
+      "hr_date_of_calling": null,
+      "hr_interview_status": null,
+      "hr_interview_date": null,
+      "hr_result": null,
+      "hr_review": null,
+      "offered_status": null,
+      "follow_by": null,
+      "offered_date_of_joining": null,
+      "revised_date_of_joining": null,
+      "joined_status": null,
+      "offered_review": null,
+      "updated_at": "2022-10-25T05:55:58.036Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 8,
+    "fields": {
+      "name": "abc",
+      "email": "abc@gmail.com",
+      "date_of_birth": "2022-10-01T18:30:00Z",
+      "phone": 9999999999,
+      "current_state": "himachal_pradesh",
+      "current_city": "Bangalore",
+      "native_state": "karnataka",
+      "native_city": "blr",
+      "college": "asd",
+      "degree": "asd",
+      "branch": "asd",
+      "year_of_graduation": 2020,
+      "sources": "nil",
+      "status": "shortlisted",
+      "calling_recruiter": 5,
+      "date_of_calling": "2022-10-25T18:30:00Z",
+      "years_agreement": null,
+      "night_shift": null,
+      "liquidated_damage": null,
+      "wfo": null,
+      "tutoring": null,
+      "relocate": null,
+      "vocab_interview_status": null,
+      "vocab_interview_date": null,
+      "vocab_score": null,
+      "vocab_interview_result": "qualified",
+      "vocab_review": null,
+      "communication_calling_recruiter": 5,
+      "communication_date_of_calling": "2022-10-17T18:30:00Z",
+      "communication_interview_status": null,
+      "communication_interview_date": null,
+      "communication_grade": null,
+      "communication_result": "qualified",
+      "communication_review": null,
+      "hr_calling_recruiter": 4,
+      "hr_date_of_calling": "2022-10-18T18:30:00Z",
+      "hr_interview_status": null,
+      "hr_interview_date": null,
+      "hr_result": "shortlisted",
+      "hr_review": null,
+      "offered_status": "offer_letter_sent",
+      "follow_by": 4,
+      "offered_date_of_joining": "2022-10-04T18:30:00Z",
+      "revised_date_of_joining": null,
+      "joined_status": "joined",
+      "offered_review": null,
+      "updated_at": "2022-10-26T07:27:15.598Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 9,
+    "fields": {
+      "name": "hgj",
+      "email": "hcj@gmail.com",
+      "date_of_birth": "2022-10-02T18:30:00Z",
+      "phone": 0,
+      "current_state": "haryana",
+      "current_city": "asd",
+      "native_state": "",
+      "native_city": "",
+      "college": "asd",
+      "degree": "asd",
+      "branch": "asda",
+      "year_of_graduation": 2019,
+      "sources": "asda",
+      "status": "rejected",
+      "calling_recruiter": null,
+      "date_of_calling": null,
+      "years_agreement": null,
+      "night_shift": null,
+      "liquidated_damage": null,
+      "wfo": null,
+      "tutoring": null,
+      "relocate": null,
+      "vocab_interview_status": null,
+      "vocab_interview_date": null,
+      "vocab_score": null,
+      "vocab_interview_result": null,
+      "vocab_review": null,
+      "communication_calling_recruiter": null,
+      "communication_date_of_calling": null,
+      "communication_interview_status": null,
+      "communication_interview_date": null,
+      "communication_grade": null,
+      "communication_result": null,
+      "communication_review": null,
+      "hr_calling_recruiter": null,
+      "hr_date_of_calling": null,
+      "hr_interview_status": null,
+      "hr_interview_date": null,
+      "hr_result": null,
+      "hr_review": null,
+      "offered_status": null,
+      "follow_by": null,
+      "offered_date_of_joining": null,
+      "revised_date_of_joining": null,
+      "joined_status": null,
+      "offered_review": null,
+      "updated_at": "2022-10-25T15:45:46.897Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 10,
+    "fields": {
+      "name": "Shiva",
+      "email": "Shiva@gmail.com",
+      "date_of_birth": "1900-10-08T07:32:48Z",
+      "phone": 1234,
+      "current_state": "himachal_pradesh",
+      "current_city": "bangalore",
+      "native_state": "kerala",
+      "native_city": "hjk",
+      "college": "v bnm",
+      "degree": "hjk",
+      "branch": "gvhbjn",
+      "year_of_graduation": 123,
+      "sources": "sdf",
+      "status": "shortlisted",
+      "calling_recruiter": 1,
+      "date_of_calling": "2022-10-25T18:30:00Z",
+      "years_agreement": "yes",
+      "night_shift": "yes",
+      "liquidated_damage": "yes",
+      "wfo": "yes",
+      "tutoring": "yes",
+      "relocate": "yes",
+      "vocab_interview_status": "will_revert",
+      "vocab_interview_date": "2022-10-26T06:30:45Z",
+      "vocab_score": "123",
+      "vocab_interview_result": "qualified",
+      "vocab_review": null,
+      "communication_calling_recruiter": null,
+      "communication_date_of_calling": null,
+      "communication_interview_status": null,
+      "communication_interview_date": null,
+      "communication_grade": null,
+      "communication_result": null,
+      "communication_review": null,
+      "hr_calling_recruiter": null,
+      "hr_date_of_calling": null,
+      "hr_interview_status": null,
+      "hr_interview_date": null,
+      "hr_result": null,
+      "hr_review": null,
+      "offered_status": null,
+      "follow_by": null,
+      "offered_date_of_joining": null,
+      "revised_date_of_joining": null,
+      "joined_status": null,
+      "offered_review": null,
+      "updated_at": "2022-10-26T07:24:53.453Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 11,
+    "fields": {
+      "name": "Prasad Datir",
+      "email": "prasad@techis.io",
+      "date_of_birth": "1998-05-08T03:54:58Z",
+      "phone": 8805278170,
+      "current_state": "karnataka",
+      "current_city": "Bangalore",
+      "native_state": "maharashtra",
+      "native_city": "Nagpur",
+      "college": "GWCET",
+      "degree": "BE",
+      "branch": "Civil",
+      "year_of_graduation": 2020,
+      "sources": "Facebook",
+      "status": "shortlisted",
+      "calling_recruiter": 1,
+      "date_of_calling": "2022-10-26T18:30:00Z",
+      "years_agreement": "yes",
+      "night_shift": "yes",
+      "liquidated_damage": "yes",
+      "wfo": "yes",
+      "tutoring": "yes",
+      "relocate": "yes",
+      "vocab_interview_status": "interview_booked",
+      "vocab_interview_date": "2022-10-28T03:30:22Z",
+      "vocab_score": "5000",
+      "vocab_interview_result": "qualified",
+      "vocab_review": null,
+      "communication_calling_recruiter": 3,
+      "communication_date_of_calling": "2022-10-26T18:30:00Z",
+      "communication_interview_status": "interview_booked",
+      "communication_interview_date": "2022-10-28T04:29:12Z",
+      "communication_grade": "a_good",
+      "communication_result": "qualified",
+      "communication_review": null,
+      "hr_calling_recruiter": 6,
+      "hr_date_of_calling": "2022-10-26T18:30:00Z",
+      "hr_interview_status": "interview_booked",
+      "hr_interview_date": "2022-10-29T05:00:00Z",
+      "hr_result": "shortlisted",
+      "hr_review": null,
+      "offered_status": "offer_letter_sent",
+      "follow_by": 4,
+      "offered_date_of_joining": "2022-10-27T18:30:00Z",
+      "revised_date_of_joining": "2022-10-30T18:30:00Z",
+      "joined_status": "joined",
+      "offered_review": null,
+      "updated_at": "2022-10-27T04:00:50.994Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  },
+  {
+    "model": "leads.lead",
+    "pk": 12,
+    "fields": {
+      "name": "Renny Antony",
+      "email": "renny@techis.io",
+      "date_of_birth": "1997-05-23T03:56:38Z",
+      "phone": 9562467956,
+      "current_state": "karnataka",
+      "current_city": "Bangalore",
+      "native_state": "kerala",
+      "native_city": "Munnar",
+      "college": "VJCET",
+      "degree": "Btech",
+      "branch": "Mechanical",
+      "year_of_graduation": 2020,
+      "sources": "Naukri",
+      "status": "rejected",
+      "calling_recruiter": null,
+      "date_of_calling": null,
+      "years_agreement": null,
+      "night_shift": null,
+      "liquidated_damage": null,
+      "wfo": null,
+      "tutoring": null,
+      "relocate": null,
+      "vocab_interview_status": null,
+      "vocab_interview_date": null,
+      "vocab_score": null,
+      "vocab_interview_result": null,
+      "vocab_review": null,
+      "communication_calling_recruiter": null,
+      "communication_date_of_calling": null,
+      "communication_interview_status": null,
+      "communication_interview_date": null,
+      "communication_grade": null,
+      "communication_result": null,
+      "communication_review": null,
+      "hr_calling_recruiter": null,
+      "hr_date_of_calling": null,
+      "hr_interview_status": null,
+      "hr_interview_date": null,
+      "hr_result": null,
+      "hr_review": null,
+      "offered_status": null,
+      "follow_by": null,
+      "offered_date_of_joining": null,
+      "revised_date_of_joining": null,
+      "joined_status": null,
+      "offered_review": null,
+      "updated_at": "2022-10-27T03:57:41.464Z",
+      "updated_by": null,
+      "created_by": null
+    }
+  }
+]
