@@ -16,6 +16,8 @@ import CustomSearchSelect from '../form/CustomSearchSelect';
 import CustomSelect from '../form/CustomSelect';
 import CustomTextField from '../form/CustomTextField';
 import userRequest from '../../requests/user-request';
+import CustomTimePicker from '../form/CustomTimePicker';
+import { useEffect } from 'react';
 
 
 const VocabularyFilter = () => {
@@ -27,7 +29,8 @@ const VocabularyFilter = () => {
         onChangeHandler,
         onChangeSearchSelect,
         queries,
-        submitSearch
+        submitSearch,
+        onChangeDateTime
     } = useContext(FormContext);
     const [callingRecruiter, setCallingRecruiter] = useState([]);
 
@@ -43,6 +46,33 @@ const VocabularyFilter = () => {
             : [];
         setCallingRecruiter(callingRecruiter);
     };
+
+    const [viTime,setViTime] = useState(new Date());
+    const [viDate, setViDate] = useState(new Date());
+
+    const onChangeViTime = (value) => {
+        setViTime(value)
+    }
+
+    const onChangeViDate = (value) => {
+        setViDate(value)
+    }
+
+    useEffect(()=>{
+
+        let datepart = new Date(viDate)
+        datepart = datepart.toISOString().split("T")[0]
+        let timepart = new Date(viTime)
+        // let offset = timepart.getTimezoneOffset()
+        // let milsec= timepart.getTime()
+        // timepart = new Date(milsec - (offset*60*1000))
+        timepart = timepart.toISOString().split("T")[1]
+        let viDateTime = datepart + "T" + timepart
+        // viDateTime = viDateTime.split(".")[0]+"+5:30"
+        console.log(viDateTime.split(".")[0]+"+5:30");
+        onChangeDateTime(viDateTime, "vocab_interview_date")
+    },[viDate,viTime])
+
    
     return (
         <Paper component="form" sx={{ p: 4, width: '100%' }}>
@@ -139,9 +169,18 @@ const VocabularyFilter = () => {
                 <Grid item xs={3}>
                     <CustomDatePicker
                         name="vocab_interview_date"
-                        label="Vocab Interview Date and Time"
-                        value={queries.vocab_interview_date}
-                        onChange={onChangeDate}
+                        label="Vocab Interview Date"
+                        value={viDate}
+                        onChange={onChangeViDate}
+                    />
+                </Grid>
+
+                <Grid item xs={3}>
+                    <CustomTimePicker
+                        name="vocab_interview_time"
+                        label="Vocab Interview Time"
+                        value={viTime}
+                        onChange={onChangeViTime}
                     />
                 </Grid>
                 

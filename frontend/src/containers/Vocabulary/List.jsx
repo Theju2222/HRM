@@ -70,11 +70,19 @@ const List = () => {
         });
     };
 
-    const onChangeDate = (value, name) => {
+    // const onChangeDate = (value, name) => {
+    //     let curDate = new Date(value);
+    //     const offset = curDate.getTimezoneOffset()
+    //     curDate = new Date(curDate.getTime() - (offset*60*1000))
+    //     curDate = curDate.toISOString().split('T')[0]
+    //     setQueries(prev => ({
+    //         ...prev,
+    //         [name]: getDateFormat(curDate)
+    //     }));
+    // };
+    
+    const onChangeDateTime = (value, name) => {
         let curDate = new Date(value);
-        const offset = curDate.getTimezoneOffset()
-        curDate = new Date(curDate.getTime() - (offset*60*1000))
-        curDate = curDate.toISOString().split('T')[0]
         setQueries(prev => ({
             ...prev,
             [name]: getDateFormat(curDate)
@@ -149,8 +157,9 @@ const List = () => {
                     onChangeSearchSelect,
                     queries,
                     querySelect,
-                    onChangeDate,
-                    submitSearch
+                    // onChangeDate,
+                    submitSearch,
+                    onChangeDateTime
                 }}
             >
                 <VocabularyFilter />
