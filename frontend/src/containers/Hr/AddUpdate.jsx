@@ -61,7 +61,7 @@ const AddUpdate = () => {
         vocab_interview_date: '',
         communication_grade: '',
         communication_result: '',
-        hr_calling_recruiter: { key: '', value: '' },
+        hr_calling_recruiter: '',
         hr_date_of_calling: '',
         hr_interview_status: '',
         hr_interview_date: '',

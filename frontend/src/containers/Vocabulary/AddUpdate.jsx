@@ -36,7 +36,7 @@ const AddUpdate = () => {
         year_of_graduation: '',
         sources: '',
         status: '',
-        calling_recruiter: { key: '', value: '' },
+        calling_recruiter: '',
         date_of_calling: '',
         years_agreement: '',
         night_shift: '',
@@ -46,7 +46,7 @@ const AddUpdate = () => {
         relocate: '',
         vocab_interview_status: '',
         vocab_interview_date: '',
-
+        communication_calling_recruiter:null,
         vocab_score: '',
         vocab_interview_result: ''
     });
@@ -126,6 +126,7 @@ const AddUpdate = () => {
         if (id) {
             LeadRequest.update(id, {
                 ...lead,
+                communication_calling_recruiter: lead.communication_calling_recruiter ? lead.communication_calling_recruiter.key : null,
                 calling_recruiter: lead.calling_recruiter.key
             })
                 .then(() => history.goBack())
@@ -136,6 +137,7 @@ const AddUpdate = () => {
         } else {
             LeadRequest.store({
                 ...lead,
+                communication_calling_recruiter: lead.communication_calling_recruiter ? lead.communication_calling_recruiter.key : null,
                 calling_recruiter: lead.calling_recruiter.key
             })
                 .then(() => history.goBack())
