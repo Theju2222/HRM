@@ -9,7 +9,7 @@ import * as React from 'react';
 import { useHistory } from 'react-router';
 import { getValueOption } from '../../utils/common';
 import { hrResultOption, interviewStatusOption } from '../../constants';
-import { getDateFormat,getDateTimeFormat } from '../../utils/common';
+import { getDateFormat, getDateTimeFormat } from '../../utils/common';
 import { StyledTableCell, StyledTableRow } from '../common/StyledTable';
 import CustomButton from '../form/CustomButton';
 import CustomPagination from '../form/CustomPagination';
@@ -33,6 +33,7 @@ export default function LeadsTable(props) {
                     <Table aria-label="customized table">
                         <TableHead>
                             <TableRow>
+                                <StyledTableCell align="center">Sl.No.</StyledTableCell>
                                 <StyledTableCell align="center">ID.</StyledTableCell>
                                 <StyledTableCell align="center">Name</StyledTableCell>
                                 <StyledTableCell align="center">Email</StyledTableCell>
@@ -42,15 +43,20 @@ export default function LeadsTable(props) {
                                 <StyledTableCell align="center">HR Interview Status</StyledTableCell>
                                 <StyledTableCell align="center">HR Interview Date and Time</StyledTableCell>
                                 <StyledTableCell align="center">HR Result</StyledTableCell>
+                                <StyledTableCell align="center">Updated At</StyledTableCell>
+                                <StyledTableCell align="center">Updated By</StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {leads &&
-                                leads.results.map((lead, vocabulary, index) => {
+                                leads.results.map((lead, index) => {
                                     return (
                                         <>
                                             {lead.communication_result === 'qualified' && (
                                                 <StyledTableRow key={lead.id}>
+                                                    <StyledTableCell align="center" component="th" scope="row">
+                                                    {perPage * (page - 1) + (1 + index)}
+                                                </StyledTableCell>
                                                     <StyledTableCell align="center">{lead.id}</StyledTableCell>
                                                     <StyledTableCell
                                                         sx={{ cursor: 'pointer', color: 'blue' }}
@@ -86,11 +92,13 @@ export default function LeadsTable(props) {
                                                         {getValueOption(hrResultOption, lead.hr_result)}
                                                     </StyledTableCell>
 
-                                                    {/* <StyledTableCell align="center">{lead.updated_by && lead.updated_by.user_name}</StyledTableCell> */}
-                                                    {/* <StyledTableCell align="center">
-                                                {lead.updated_by && lead.updated_by.user_name}
-                                                <br />
-                                            </StyledTableCell> */}
+                                                    <StyledTableCell align="center">
+                                                        {getDateTimeFormat(lead.updated_at)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {lead.updated_by && lead.updated_by.user_name}
+                                                        <br />
+                                                    </StyledTableCell>
                                                 </StyledTableRow>
                                             )}
                                         </>

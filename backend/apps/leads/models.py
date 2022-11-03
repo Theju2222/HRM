@@ -87,6 +87,9 @@ class Lead(models.Model):
     vocab_interview_date = models.DateTimeField(
         'Interview Date', blank=False, null=True
     )
+    vocab_interview_time = models.TimeField(
+        'Interview Time', blank=False, null=True
+    )
 
     vocab_score = models.CharField(
         'Vocab Score', blank=False, null=True, max_length=50

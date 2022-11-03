@@ -9,7 +9,7 @@ import * as React from 'react';
 import { useHistory } from 'react-router';
 import { getValueOption } from '../../utils/common';
 import { commGradeOption, interviewStatusOption, vocabResultOption } from '../../constants';
-import { getDateFormat,getDateTimeFormat } from '../../utils/common';
+import { getDateFormat, getDateTimeFormat } from '../../utils/common';
 
 import { StyledTableCell, StyledTableRow } from '../common/StyledTable';
 import CustomButton from '../form/CustomButton';
@@ -34,6 +34,7 @@ export default function LeadsTable(props) {
                     <Table aria-label="customized table">
                         <TableHead>
                             <TableRow>
+                                <StyledTableCell align="center">Sl.No.</StyledTableCell>
                                 <StyledTableCell align="center">ID.</StyledTableCell>
                                 <StyledTableCell align="center">Name</StyledTableCell>
                                 <StyledTableCell align="center">Email</StyledTableCell>
@@ -44,70 +45,70 @@ export default function LeadsTable(props) {
                                 <StyledTableCell align="center">Communication Interview Date and Time</StyledTableCell>
                                 <StyledTableCell align="center">Communication Grade</StyledTableCell>
                                 <StyledTableCell align="center">Communication Result</StyledTableCell>
-
+                                <StyledTableCell align="center">Updated At</StyledTableCell>
+                                <StyledTableCell align="center">Updated By</StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {leads &&
-                                leads.results.map((lead, vocabulary, index) => {
+                                leads.results.map((lead, index) => {
                                     return (
                                         <>
-                                        {
-                                            (lead.vocab_interview_result ==='qualified') &&(
+                                            {lead.vocab_interview_result === 'qualified' && (
                                                 <StyledTableRow key={lead.id}>
-                                                    
-                                            <StyledTableCell align="center">{lead.id}</StyledTableCell>
-                                            <StyledTableCell
-                                                sx={{ cursor: 'pointer', color: 'blue' }}
-                                                align="center"
-                                                onClick={() =>
-                                                    history.push(`/communication/edit/${lead.id}`, {
-                                                        id: lead.id
-                                                    })
-                                                }
-                                            >
-                                                {lead.name}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">{lead.email}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead.phone}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead?.communication_calling_recruiter?.user_name}</StyledTableCell>
-                                            <StyledTableCell align="center">
+                                                    <StyledTableCell align="center" component="th" scope="row">
+                                                        {perPage * (page - 1) + (1 + index)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">{lead.id}</StyledTableCell>
+                                                    <StyledTableCell
+                                                        sx={{ cursor: 'pointer', color: 'blue' }}
+                                                        align="center"
+                                                        onClick={() =>
+                                                            history.push(`/communication/edit/${lead.id}`, {
+                                                                id: lead.id
+                                                            })
+                                                        }
+                                                    >
+                                                        {lead.name}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">{lead.email}</StyledTableCell>
+                                                    <StyledTableCell align="center">{lead.phone}</StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {lead?.communication_calling_recruiter?.user_name}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
                                                         {getDateFormat(lead.communication_date_of_calling)}
                                                     </StyledTableCell>
 
-                                            <StyledTableCell align="center">
-                                                {getValueOption(interviewStatusOption, lead.communication_interview_status)}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(
+                                                            interviewStatusOption,
+                                                            lead.communication_interview_status
+                                                        )}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
                                                         {getDateTimeFormat(lead.communication_interview_date)}
                                                     </StyledTableCell>
 
-                                            <StyledTableCell align="center">
-                                                {getValueOption(commGradeOption, lead.communication_grade)}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                {getValueOption(vocabResultOption, lead.communication_result)}
-                                            </StyledTableCell>
-                                            
-                                            {/* <StyledTableCell align="center">{lead.updated_by && lead.updated_by.user_name}</StyledTableCell> */}
-                                            {/* <StyledTableCell align="center">
-                                                {lead.updated_by && lead.updated_by.user_name}
-                                                <br />
-                                            </StyledTableCell> */}
-                                            
-                                        
-                                        
-                                        
-                                    </StyledTableRow>
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(commGradeOption, lead.communication_grade)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(vocabResultOption, lead.communication_result)}
+                                                    </StyledTableCell>
 
-                                            )
-
-                                        }
+                                                    <StyledTableCell align="center">
+                                                        {getDateTimeFormat(lead.updated_at)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {lead.updated_by && lead.updated_by.user_name}
+                                                        <br />
+                                                    </StyledTableCell>
+                                                </StyledTableRow>
+                                            )}
                                         </>
-                                    )
-                                    
-                                    
-})}
+                                    );
+                                })}
                         </TableBody>
                     </Table>
                     <CustomPagination

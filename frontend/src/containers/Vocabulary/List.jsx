@@ -7,7 +7,7 @@ import { FormContext } from '../../contexts/FormContext';
 import { useQuery } from '../../hooks/useQuery';
 import LeadRequest from '../../requests/lead-request';
 import { vocabResultOption } from '../../constants';
-import { getDateFormat } from '../../utils/common';
+import { getDateFormat, getTimeFormat } from '../../utils/common';
 import vocabularyRequest from '../../requests/vocabulary-request';
 
 const List = () => {
@@ -29,13 +29,14 @@ const List = () => {
         relocate: searchQuery.get('  relocate') || '',
         vocab_interview_status: searchQuery.get('vocab_interview_status') || '',
         vocab_interview_date: searchQuery.get('vocab_interview_date') || null,
-        start_date: searchQuery.get('start_date') || null,
-        end_date: searchQuery.get('end_date') || null,
         vocab_score: searchQuery.get('vocab_score') || '',
         vocab_interview_result: vocab_interview_result
             ? vocabResultOption.filter(s => vocab_interview_result.split(',').includes(s.key))
             : [],
         date_of_calling: searchQuery.get('date_of_calling') || null,
+        vocab_interview_time: searchQuery.get('vocab_interview_time') || null,
+        min: searchQuery.get('min') || '',
+        max: searchQuery.get('max') || '',
         status:'shortlisted'
     });
     const [querySelect, setQuerySelect] = useState({
@@ -80,6 +81,13 @@ const List = () => {
             [name]: getDateFormat(curDate)
         }));
     };
+
+    const onChangeDateTime = (value, name) => {
+        setQueries(prev => ({
+            ...prev,
+            [name]: value
+        }));
+    };
     const onChangeSearchSelect = (value, name) => {
         setQuerySelect({
             ...querySelect,
@@ -117,7 +125,10 @@ const List = () => {
             relocate: '',
             vocab_interview_status: '',
             vocab_interview_date: null,
-            vocab_score: ''
+            vocab_interview_time: '',
+            vocab_score: '',
+            min: '',
+            max: '',
         });
         setQuerySelect({ calling_recruiter: { value: '', key: '' } });
         history.replace('/vocabulary');
@@ -150,6 +161,7 @@ const List = () => {
                     queries,
                     querySelect,
                     onChangeDate,
+                    onChangeDateTime,
                     submitSearch
                 }}
             >

@@ -12,6 +12,7 @@ import CustomButton from '../form/CustomButton';
 import CustomDatePicker from '../form/CustomDatePicker';
 import CustomLoadingButton from '../form/CustomLoadingButton';
 import CustomDateTimePicker from '../form/CustomDateTimePicker';
+import CustomTimePicker from '../form/CustomTimePicker';
 import CustomSearchSelect from '../form/CustomSearchSelect';
 import CustomSelect from '../form/CustomSelect';
 import CustomTextField from '../form/CustomTextField';
@@ -21,6 +22,7 @@ import userRequest from '../../requests/user-request';
 const VocabularyFilter = () => {
     const {
         onChangeDate,
+        onChangeDateTime,
         querySelect,
         clearSearch,
         isLoading,
@@ -139,20 +141,44 @@ const VocabularyFilter = () => {
                 <Grid item xs={3}>
                     <CustomDatePicker
                         name="vocab_interview_date"
-                        label="Vocab Interview Date and Time"
+                        label="Vocab Interview Date"
                         value={queries.vocab_interview_date}
                         onChange={onChangeDate}
                     />
                 </Grid>
                 
                 <Grid item xs={3}>
+                    <CustomTimePicker
+                        name="vocab_interview_time"
+                        label="Vocab Interview Time"
+                        value={queries.vocab_interview_time}
+                        onChange={onChangeDateTime}
+                    />
+                </Grid>
+                <Grid item xs={3}>
+                    <CustomTextField
+                        name="min"
+                        label="Min"
+                        value={queries.min}
+                        onChange={onChangeHandler}
+                    />
+                </Grid>
+                <Grid item xs={3}>
+                    <CustomTextField
+                        name="max"
+                        label="Max"
+                        value={queries.max}
+                        onChange={onChangeHandler}
+                    />
+                </Grid>
+                {/* <Grid item xs={3}>
                     <CustomTextField
                         name="vocab_score"
                         label="Vocab Score"
                         value={queries.vocab_score}
                         onChange={onChangeHandler}
                     />
-                </Grid>
+                </Grid> */}
                 <Grid item xs={3}>
                     <CustomSelect
                         name="vocab_interview_result"

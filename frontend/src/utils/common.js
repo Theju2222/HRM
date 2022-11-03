@@ -25,6 +25,13 @@ export const getDateFormat = (date, isDateTime = false) => {
     return date ? `${year}-${month}-${day}`:null;
 };
 
+export const getTimeFormat = (date, isDateTime = true) => {
+    const stringDate = new Date(date);
+  
+    const time = new Intl.DateTimeFormat('en', { hour: '2-digit', minute: '2-digit' }).format(stringDate);
+    return date ? `${time}` : null;
+};
+
 export const getValueOption = (options, key) => {
     const option = options.find(o => o.key === key);
     return option ? option.value : '';

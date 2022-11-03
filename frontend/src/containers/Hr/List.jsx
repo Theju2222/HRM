@@ -23,6 +23,7 @@ const List = () => {
         hr_interview_status: searchQuery.get('hr_interview_status') || '',
         hr_interview_date: searchQuery.get('hr_interview_date') || null,
         hr_result: hr_result ? hrResultOption.filter(s => hr_result.split(',').includes(s.key)) : [],
+        communication_result: 'qualified'
     });
     const [querySelect, setQuerySelect] = useState({
         hr_calling_recruiter: JSON.parse(searchQuery.get('hr_calling_recruiter')) || { value: '', keys: '' },

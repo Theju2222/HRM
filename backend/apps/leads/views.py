@@ -19,6 +19,8 @@ class LeadFilter(filters.FilterSet):
     phone = filters.CharFilter(lookup_expr="icontains")
     degree = filters.CharFilter(lookup_expr="icontains")
     branch = filters.CharFilter(lookup_expr="icontains")
+    min = filters.CharFilter(field_name="vocab_score", lookup_expr="icontains")
+    max = filters.CharFilter(field_name="vocab_score",lookup_expr="icontains")
     year_of_graduation = filters.CharFilter(lookup_expr="icontains")
     date_of_calling = filters.DateFilter()
     vocab_interview_date = filters.DateFilter(lookup_expr="gte")
@@ -28,7 +30,7 @@ class LeadFilter(filters.FilterSet):
     hr_interview_date = filters.DateFilter(lookup_expr="gte")
     offered_date_of_joining = filters.DateFilter()
     revised_date_of_joining = filters.DateFilter()
-
+    vocab_interview_time = filters.TimeFilter()
     class Meta:
         model = Lead
         fields = [
@@ -55,6 +57,11 @@ class LeadFilter(filters.FilterSet):
             'offered_status',
             'follow_by',
             'joined_status',
+            'vocab_interview_time',
+            'min',
+            'max',
+            "updated_by",
+            "created_by"
         ]
 
     def multi_string_filter(self, queryset, name, value):
@@ -98,7 +105,7 @@ class LeadFilter(filters.FilterSet):
         return qs.all()
 
 
-class LeadList( generics.ListAPIView):
+class LeadList( CustomLoginRequiredMixin, generics.ListAPIView):
     queryset = Lead.objects.all().order_by('-id')
     serializer_class = LeadListSerializer
     filter_backends = [DjangoFilterBackend, search.SearchFilter]
@@ -114,6 +121,11 @@ class LeadFind(CustomLoginRequiredMixin, generics.RetrieveAPIView):
 class LeadAdd(CustomLoginRequiredMixin, generics.CreateAPIView):
     queryset = Lead.objects.all()
     serializer_class = LeadSerializer
+
+    def post(self, request, *args, **kwargs):
+        request.data['created_by'] = request.login_user.id
+        return self.create(request, *args, **kwargs)
+
 
 
 class LeadUpdate(CustomLoginRequiredMixin, generics.RetrieveAPIView, generics.UpdateAPIView):

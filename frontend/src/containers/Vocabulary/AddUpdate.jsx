@@ -14,6 +14,7 @@ import userRequest from '../../requests/user-request';
 import CustomSearchSelect from '../../components/form/CustomSearchSelect';
 import CustomDateTimePicker from '../../components/form/CustomDateTimePicker';
 import CustomTextArea from '../../components/form/CustomTextArea';
+import CustomTimePicker from '../../components/form/CustomTimePicker';
 
 const AddUpdate = () => {
     const history = useHistory();
@@ -424,10 +425,21 @@ const AddUpdate = () => {
                 <Grid item xs={4}>
                     <CustomDateTimePicker
                         name="vocab_interview_date"
-                        label="Vocab Interview Date and Time"
+                        label="Vocab Interview Date"
                         error={!!errors.vocab_interview_date}
                         helperText={errors.vocab_interview_date}
                         value={lead.vocab_interview_date}
+                        onChange={onChangeDateTime}
+                    />
+                </Grid>
+
+                <Grid item xs={4}>
+                    <CustomTimePicker
+                        name="vocab_interview_time"
+                        label="Vocab Interview time"
+                        error={!!errors.vocab_interview_time}
+                        helperText={errors.vocab_interview_time}
+                        value={lead.vocab_interview_time}
                         onChange={onChangeDateTime}
                     />
                 </Grid>

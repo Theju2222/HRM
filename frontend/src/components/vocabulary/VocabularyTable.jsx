@@ -9,7 +9,7 @@ import * as React from 'react';
 import { useHistory } from 'react-router';
 import { getValueOption } from '../../utils/common';
 import { candiadteStatusOption, interviewStatusOption, vocabResultOption } from '../../constants';
-import { getDateFormat, getDateTimeFormat } from '../../utils/common';
+import { getDateFormat, getDateTimeFormat, getTimeFormat } from '../../utils/common';
 
 import { StyledTableCell, StyledTableRow } from '../common/StyledTable';
 import CustomButton from '../form/CustomButton';
@@ -34,6 +34,7 @@ export default function LeadsTable(props) {
                     <Table aria-label="customized table">
                         <TableHead>
                             <TableRow>
+                                <StyledTableCell align="center">Sl.No.</StyledTableCell>
                                 <StyledTableCell align="center">ID.</StyledTableCell>
                                 <StyledTableCell align="center">Name</StyledTableCell>
                                 <StyledTableCell align="center">Email</StyledTableCell>
@@ -47,89 +48,93 @@ export default function LeadsTable(props) {
                                 <StyledTableCell align="center">Tutoring</StyledTableCell>
                                 <StyledTableCell align="center">Relocate</StyledTableCell>
                                 <StyledTableCell align="center"> Vocab Interview Status </StyledTableCell>
-                                <StyledTableCell align="center">Vocab Interview Date and Time</StyledTableCell>
+                                <StyledTableCell align="center">Vocab Interview Date</StyledTableCell>
+                                <StyledTableCell align="center">Vocab Interview Time</StyledTableCell>
                                 <StyledTableCell align="center"> Vocab Score </StyledTableCell>
                                 <StyledTableCell align="center"> Vocab Interview Result </StyledTableCell>
-
+                                <StyledTableCell align="center">Updated At</StyledTableCell>
+                                <StyledTableCell align="center">Updated By</StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
                             {leads &&
-                                leads.results.map((lead, vocabulary, index) => {
+                                leads.results.map((lead, index) => {
                                     return (
                                         <>
-                                        {
-                                            (lead.status ==='shortlisted') &&(
+                                            {lead.status === 'shortlisted' && (
                                                 <StyledTableRow key={lead.id}>
-                                                    
-                                            <StyledTableCell align="center">{lead.id}</StyledTableCell>
-                                            <StyledTableCell
-                                                sx={{ cursor: 'pointer', color: 'blue' }}
-                                                align="center"
-                                                onClick={() =>
-                                                    history.push(`/vocabulary/edit/${lead.id}`, {
-                                                        id: lead.id
-                                                    })
-                                                }
-                                            >
-                                                {lead.name}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">{lead.email}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead.phone}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead?.calling_recruiter?.user_name}</StyledTableCell> 
-                                            <StyledTableCell align="center">
+                                                    <StyledTableCell align="center" component="th" scope="row">
+                                                        {perPage * (page - 1) + (1 + index)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">{lead.id}</StyledTableCell>
+                                                    <StyledTableCell
+                                                        sx={{ cursor: 'pointer', color: 'blue' }}
+                                                        align="center"
+                                                        onClick={() =>
+                                                            history.push(`/vocabulary/edit/${lead.id}`, {
+                                                                id: lead.id
+                                                            })
+                                                        }
+                                                    >
+                                                        {lead.name}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">{lead.email}</StyledTableCell>
+                                                    <StyledTableCell align="center">{lead.phone}</StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {lead?.calling_recruiter?.user_name}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
                                                         {getDateFormat(lead.date_of_calling)}
                                                     </StyledTableCell>
 
-                                            <StyledTableCell align="center">
-                                                {getValueOption(candiadteStatusOption, lead.years_agreement)}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                {getValueOption(candiadteStatusOption, lead.night_shift)}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                {getValueOption(candiadteStatusOption, lead.liquidated_damage)}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                {getValueOption(candiadteStatusOption, lead.wfo)}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                {getValueOption(candiadteStatusOption, lead.tutoring)}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                {getValueOption(candiadteStatusOption, lead.relocate)}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                {getValueOption(interviewStatusOption, lead.vocab_interview_status)}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(candiadteStatusOption, lead.years_agreement)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(candiadteStatusOption, lead.night_shift)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(candiadteStatusOption, lead.liquidated_damage)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(candiadteStatusOption, lead.wfo)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(candiadteStatusOption, lead.tutoring)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(candiadteStatusOption, lead.relocate)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(
+                                                            interviewStatusOption,
+                                                            lead.vocab_interview_status
+                                                        )}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
                                                         {getDateTimeFormat(lead.vocab_interview_date)}
                                                     </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {getTimeFormat(lead.vocab_interview_time)}
+                                                    </StyledTableCell>
 
-                                            <StyledTableCell align="center">{lead.vocab_score}</StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                {getValueOption(vocabResultOption, lead.vocab_interview_result)}
-                                            </StyledTableCell>
-                                         
-                                            {/* <StyledTableCell align="center">{lead.updated_by && lead.updated_by.user_name}</StyledTableCell> */}
-                                            {/* <StyledTableCell align="center">
-                                                {lead.updated_by && lead.updated_by.user_name}
-                                                <br />
-                                            </StyledTableCell> */}
-                                            
-                                        
-                                        
-                                        
-                                    </StyledTableRow>
+                                                    <StyledTableCell align="center">{lead.vocab_score}</StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {getValueOption(vocabResultOption, lead.vocab_interview_result)}
+                                                    </StyledTableCell>
 
-                                            )
-
-                                        }
+                                                    <StyledTableCell align="center">
+                                                        {getDateTimeFormat(lead.updated_at)}
+                                                    </StyledTableCell>
+                                                    <StyledTableCell align="center">
+                                                        {lead.updated_by && lead.updated_by.user_name}
+                                                        <br />
+                                                    </StyledTableCell>
+                                                </StyledTableRow>
+                                            )}
                                         </>
-                                    )
-                                    
-                                    
-})}
+                                    );
+                                })}
                         </TableBody>
                     </Table>
                     <CustomPagination

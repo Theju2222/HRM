@@ -22,7 +22,7 @@ class AdminsFilter(filters.FilterSet):
         ]
 
 
-class AddUser( generics.CreateAPIView):
+class AddUser(CustomLoginRequiredMixin, generics.CreateAPIView):
     queryset = User.objects.all()
     serializer_class = AddUserSerializer
 
@@ -43,13 +43,19 @@ class UserCheckLogin(CustomLoginRequiredMixin, generics.RetrieveAPIView):
 
 
 # Sample: Add this 'CustomLoginRequiredMixin' to the login-required class.
-class UserList( generics.ListAPIView):
-    # Get all users, limit = 20
-    queryset = User.objects.exclude(status = 'deleted').all().order_by('-id')
+class UserList(CustomLoginRequiredMixin, generics.ListAPIView):
+    queryset = User.objects.all()
     serializer_class = UserSerializer
-    filter_backends = [DjangoFilterBackend, search.SearchFilter]
+    filter_backends = [DjangoFilterBackend]
     filterset_class = AdminsFilter
-    search_fields = ['user_name']
+    
+    def get(self, request, *args, **kwargs):
+        self.queryset = User.objects.all().order_by('-id')
+        
+        if request.login_user.role in ['member']:
+            self.queryset = User.objects.exclude(status='deleted').order_by(
+                '-id').filter(Q(name=request.login_user))
+        return self.list(request, *args, **kwargs)
 
 
 class UserUpdate(CustomLoginRequiredMixin, generics.RetrieveAPIView, generics.UpdateAPIView ):

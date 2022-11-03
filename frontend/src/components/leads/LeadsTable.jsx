@@ -7,9 +7,9 @@ import TableHead from '@mui/material/TableHead';
 import TableRow from '@mui/material/TableRow';
 import * as React from 'react';
 import { useHistory } from 'react-router';
-import {leadStatusOption} from '../../constants';
+import { leadStatusOption } from '../../constants';
 import { getValueOption } from '../../utils/common';
-import { getDateFormat } from '../../utils/common';
+import { getDateFormat, getDateTimeFormat } from '../../utils/common';
 import { StyledTableCell, StyledTableRow } from '../common/StyledTable';
 import CustomButton from '../form/CustomButton';
 import CustomPagination from '../form/CustomPagination';
@@ -22,7 +22,6 @@ export default function LeadsTable(props) {
     const hasLeads = leads && leads.results && !!leads.results.length;
     const history = useHistory();
 
-
     return (
         <>
             {isLoading ? (
@@ -34,6 +33,7 @@ export default function LeadsTable(props) {
                     <Table aria-label="customized table">
                         <TableHead>
                             <TableRow>
+                                <StyledTableCell align="center">Sl.No.</StyledTableCell>
                                 <StyledTableCell align="center">No.</StyledTableCell>
                                 <StyledTableCell align="center">Name</StyledTableCell>
                                 <StyledTableCell align="center">Email</StyledTableCell>
@@ -46,73 +46,62 @@ export default function LeadsTable(props) {
                                 <StyledTableCell align="center">Year of Graduation</StyledTableCell>
                                 <StyledTableCell align="center">Sources</StyledTableCell>
                                 <StyledTableCell align="center"> Status </StyledTableCell>
-
-                                {/* <StyledTableCell align="center"> Edit </StyledTableCell> */}
-                                
-
+                                <StyledTableCell align="center">Created At</StyledTableCell>
+                                <StyledTableCell align="center">Created By</StyledTableCell>
                             </TableRow>
                         </TableHead>
                         <TableBody>
-                            {leads.results.map(lead => {
-                                return(
+                            {leads.results.map((lead, index) => {
+                                return (
                                     <>
-                                    {
-                                        (lead.status === 'rejected') && (
+                                        {lead.status === 'rejected' && (
                                             <StyledTableRow key={lead.id}>
-                                            <StyledTableCell
-                                                sx="cursor:pointer"
-                                                align="center"
-                                                onClick={() =>
-                                                    history.push(`/leads/edit/${lead.id}`, {
-                                                        id: lead.id
-                                                    })
-                                                }
-                                            >
-                                                {lead.id}
-                                            </StyledTableCell>
-                                            <StyledTableCell align="center">{lead.name}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead.email}</StyledTableCell>
-                                            <StyledTableCell align="center">{getDateFormat(lead.date_of_birth)}</StyledTableCell>
-        
-                                            <StyledTableCell align="center">{lead.phone}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead.current_city}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead.college}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead.degree}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead.branch}</StyledTableCell>
-        
-                                            <StyledTableCell align="center">{lead.year_of_graduation}</StyledTableCell>
-                                            <StyledTableCell align="center">{lead.sources}</StyledTableCell>
-                                            <StyledTableCell align="center">
-                                                        {getValueOption(leadStatusOption, lead.status)}
+                                                <StyledTableCell align="center" component="th" scope="row">
+                                                    {perPage * (page - 1) + (1 + index)}
+                                                </StyledTableCell>
+                                                <StyledTableCell align="center">{lead.id}</StyledTableCell>
+                                                    <StyledTableCell
+                                                        sx={{ cursor: 'pointer', color: 'blue' }}
+                                                        align="center"
+                                                        onClick={() =>
+                                                            history.push(`/leads/edit/${lead.id}`, {
+                                                                id: lead.id
+                                                            })
+                                                        }
+                                                    >
+                                                        {lead.name}
                                                     </StyledTableCell>
-        
-        
-                                            {/* <StyledTableCell align="center">{lead.updated_by && lead.updated_by.user_name}</StyledTableCell> */}
-        
-        
-        
-        
-        
-                                                
-                                            {/* <StyledTableCell align="center">
-            
-                                                <CustomButton
-                                                    onClick={() =>
-                                                        history.push(`/leads/edit/${lead.id}`, {
-                                                            id: lead.id
-                                                        })
-                                                    }
-                                                    text="Edit"
-                                                    variant="outlined"
-                                                />
-                                            </StyledTableCell> */}
-                                        </StyledTableRow>
-                                        )
-                                    }
+                                                <StyledTableCell align="center">{lead.email}</StyledTableCell>
+                                                <StyledTableCell align="center">
+                                                    {getDateFormat(lead.date_of_birth)}
+                                                </StyledTableCell>
+
+                                                <StyledTableCell align="center">{lead.phone}</StyledTableCell>
+                                                <StyledTableCell align="center">{lead.current_city}</StyledTableCell>
+                                                <StyledTableCell align="center">{lead.college}</StyledTableCell>
+                                                <StyledTableCell align="center">{lead.degree}</StyledTableCell>
+                                                <StyledTableCell align="center">{lead.branch}</StyledTableCell>
+
+                                                <StyledTableCell align="center">
+                                                    {lead.year_of_graduation}
+                                                </StyledTableCell>
+                                                <StyledTableCell align="center">{lead.sources}</StyledTableCell>
+                                                <StyledTableCell align="center">
+                                                    {getValueOption(leadStatusOption, lead.status)}
+                                                </StyledTableCell>
+
+                                                <StyledTableCell align="center">
+                                                    {getDateTimeFormat(lead.updated_at)}
+                                                </StyledTableCell>
+                                                <StyledTableCell align="center">
+                                                    {lead.created_by && lead.created_by.user_name}
+                                                    <br />
+                                                </StyledTableCell>
+                                            </StyledTableRow>
+                                        )}
                                     </>
-                                )
-                               
-                                })}
+                                );
+                            })}
                         </TableBody>
                     </Table>
                     <CustomPagination
